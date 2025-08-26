@@ -23,6 +23,12 @@ app.use(
   })
 );
 
+app.use(express.json());
+
+app.get('/', (req, res) => {
+  res.json({ message: "Nuke Nation Backend: ¡Bienvenido al caos digital!" });
+});
+
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
@@ -30,8 +36,6 @@ const client = new Client({
     GatewayIntentBits.GuildPresences,
   ],
 });
-
-app.use(express.json());
 
 client.once('ready', () => {
   console.log(`Bot conectado como ${client.user.tag}`);
