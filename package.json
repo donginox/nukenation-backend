@@ -1,14 +1,15 @@
 {
   "name": "nukenation-backend",
   "version": "1.0.0",
-  "description": "Backend for Nuke Nation",
+  "description": "Backend para Nuke Nation",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.19.2",
+    "express": "^4.18.2",
+    "discord.js": "^14.15.3",
     "cors": "^2.8.5",
-    "discord.js": "^14.16.2"
+    "dotenv": "^16.4.5"
   }
 }
