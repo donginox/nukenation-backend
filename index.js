@@ -20,8 +20,14 @@ app.use(
         callback(new Error('No permitido por CORS'));
       }
     },
+    methods: ['GET', 'POST', 'OPTIONS'], // Permitir métodos necesarios
+    allowedHeaders: ['Content-Type', 'Authorization'], // Permitir encabezados comunes
+    credentials: false, // Cambiar a true si necesitas enviar cookies o autenticación
   })
 );
+
+// Manejar solicitudes OPTIONS explícitamente (para preflight)
+app.options('*', cors());
 
 app.use(express.json());
 
